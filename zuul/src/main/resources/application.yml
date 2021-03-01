@@ -1,0 +1,20 @@
+server:
+  port: 9004
+
+
+zuul:
+  host:
+    socket-timeout-millis: 30000
+  routes:
+    admin-service:
+      path: /admin/**
+      url: http://localhost:9005/
+    provider-service:
+      path: /provider/**
+      url: http://localhost:9002/
+    receiver-service:
+      path: /receiver/**
+      url: http://localhost:9001/
+spring:
+  application:
+    name: gateway_service
