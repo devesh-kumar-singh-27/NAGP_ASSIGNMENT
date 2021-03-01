@@ -97,7 +97,7 @@ public class Controller {
 		return "accepted or declined";
 	}
 
-	@GetMapping("/client Details")
+	@GetMapping("/clientDetails")
 	public ClientInformation whoWillWork(@RequestParam("serviceId") String serviceId) {
 		return new ClientInformation();
 	}
