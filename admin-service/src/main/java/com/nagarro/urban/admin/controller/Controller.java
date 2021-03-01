@@ -13,7 +13,7 @@ public class Controller {
 
 		@GetMapping("/")
 		public String index() {
-			return "This gets the order details from receiver service , passes the request to the provider-service.";
+			return "Service Name - admin-service. Explanation - This service gets the order details from receiver-service , passes the request to the provider-service based on area and availability of the providers.";
 		}
 	
 	@GetMapping("/availableServices")

@@ -21,7 +21,7 @@ public class Controller {
 
 	@GetMapping("/")
 	public String index() {
-		return " It focusses on end customers. The main work of this service is taking the requests from users , creating an order , passes the request to admin and if the request is processed then passing the provider details as response.";
+		return " Service Name -> receiver-service. Explanation - This service focusses on end customers and is responsible for taking the requests from users , creating an order , passes the request to admin and if the request is processed then passing the provider details as response.";
 	}
 	
 	@GetMapping("/availableServices")

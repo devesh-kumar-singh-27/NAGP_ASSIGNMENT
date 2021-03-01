@@ -15,12 +15,12 @@ public class Controller {
 
 	@GetMapping("/")
 	public String index() {
-		return "It is the service which focusses on the service providers. Its main work will be sending the notification of work to individual providers as per their area and availability.";
+		return "Service Name - provider-service. Explanation - This service focusses on the service providers. It is responsible for sending the notification of work to individual providers as per their area and availability.";
 	}
 	
 	@PostMapping("/register")
 	public String RegisterUser(Register register) {
-		return "some toke if registerd successfully";
+		return "some token if registered successfully";
 	}
 
 	class Register {
@@ -53,7 +53,7 @@ public class Controller {
 
 	@PostMapping("/login")
 	public String login(Login login) {
-		return "some toke if login successfully";
+		return "some token if login successfully";
 	}
 
 	class Login {
@@ -94,7 +94,7 @@ public class Controller {
 	@GetMapping("/acceptedOrNot")
 	public String isRequestAccepted(@RequestParam("userName") String username, @RequestParam("serviceId") String serviceId,
 			@RequestParam("accepted") boolean isAccepted) {
-		return "accepted or decliend";
+		return "accepted or declined";
 	}
 
 	@GetMapping("/client Details")
