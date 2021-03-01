@@ -17,7 +17,7 @@ public class Controller {
 		}
 	
 	@GetMapping("/availableServices")
-	public String helloWorld() {
+	public String checkAvailabilityAsPerArea() {
 		return "available services";
 	}
 
