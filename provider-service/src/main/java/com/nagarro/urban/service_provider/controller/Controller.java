@@ -3,16 +3,21 @@ package com.nagarro.urban.service_provider.controller;
 import java.util.Date;
 import java.util.List;
 
-import javax.ws.rs.QueryParam;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
 
+	@GetMapping("/")
+	public String index() {
+		return "It is the service which focusses on the service providers. Its main work will be sending the notification of work to individual providers as per their area and availability.";
+	}
+	
 	@PostMapping("/register")
 	public String RegisterUser(Register register) {
 		return "some toke if registerd successfully";
@@ -87,13 +92,13 @@ public class Controller {
 	}
 
 	@GetMapping("/acceptedOrNot")
-	public String isRequestAccepted(@QueryParam("userName") String username, @QueryParam("serviceId") String serviceId,
-			@QueryParam("accepted") boolean isAccepted) {
+	public String isRequestAccepted(@RequestParam("userName") String username, @RequestParam("serviceId") String serviceId,
+			@RequestParam("accepted") boolean isAccepted) {
 		return "accepted or decliend";
 	}
 
 	@GetMapping("/client Details")
-	public ClientInformation whoWillWork(@QueryParam("serviceId") String serviceId) {
+	public ClientInformation whoWillWork(@RequestParam("serviceId") String serviceId) {
 		return new ClientInformation();
 	}
 

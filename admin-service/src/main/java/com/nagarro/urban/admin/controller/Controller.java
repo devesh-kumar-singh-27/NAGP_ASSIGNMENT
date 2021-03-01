@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
+		@GetMapping("/")
+		public String index() {
+			return "This gets the order details from receiver service , passes the request to the provider-service.";
+		}
+	
 	@GetMapping("/availableServices")
 	public String helloWorld() {
 		return "available services";
