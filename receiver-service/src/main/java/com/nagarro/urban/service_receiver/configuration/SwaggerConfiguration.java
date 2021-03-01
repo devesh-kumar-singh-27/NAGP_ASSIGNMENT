@@ -1,4 +1,4 @@
-package com.nagarro.urban.service_provider;
+package com.nagarro.urban.service_receiver.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
