@@ -1,0 +1,41 @@
+version: '3'
+services: 
+  provider-service:
+      image: docker.io/devesh12345/provider-service-image
+      depends_on:
+        zuul-service:
+          condition: service_started
+      ports:
+        - "9002:9002"
+        
+  receiver-service:
+      image: docker.io/devesh12345/receiver-service-image
+      depends_on:
+        zuul-service:
+          condition: service_started
+      ports:
+        - "9001:9001"
+        
+  eureka-service:
+      image: docker.io/devesh12345/eureka-service-image
+      depends_on:
+        zuul-service:
+          condition: service_started
+      ports:
+        - "9003:9003"
+        
+  zuul-service:
+      image: docker.io/devesh12345/zuul-service-image
+      ports:
+        - "9004:9004"
+
+  admin-service:
+      image: docker.io/devesh12345/admin-service-image
+      depends_on:
+        zuul-service:
+          condition: service_started
+      ports:
+        - "9005:9005"
+    
+        
+    
