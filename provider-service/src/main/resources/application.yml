@@ -2,4 +2,4 @@ server:
   port: 9002
 spring:
   application:
-    name: provider_service
+    name: provider-service

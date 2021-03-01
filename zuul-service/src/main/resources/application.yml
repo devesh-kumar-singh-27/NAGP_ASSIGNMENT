@@ -17,4 +17,4 @@ zuul:
       url: http://localhost:9001/
 spring:
   application:
-    name: gateway_service
+    name: gateway-service

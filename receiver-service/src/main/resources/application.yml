@@ -3,4 +3,4 @@ server:
 
 spring:
   application:
-    name: receiver_service
+    name: receiver-service
