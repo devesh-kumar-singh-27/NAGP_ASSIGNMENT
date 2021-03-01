@@ -1,0 +1,46 @@
+version: '3'
+services: 
+  provider-service:
+      build: ./provider
+      image: provider-service-im
+      depends_on:
+        zuul-service:
+          condition: service_healthy
+      ports:
+        - "9002:9002"
+        
+  receiver-service:
+      build: ./receiver
+      image: receiver-service-im
+      depends_on:
+        zuul-service:
+          condition: service_healthy
+      ports:
+        - "9001:9001"
+        
+  eureka-service:
+      build: ./eureka
+      image: eureka-service-im
+      depends_on:
+        zuul-service:
+          condition: service_healthy
+      ports:
+        - "9003:9003"
+        
+  zuul-service:
+      build: ./zuul
+      image: zuul-service-im
+      ports:
+        - "9004:9004"
+
+  admin-service:
+      build: ./admin
+      image: admin-service-im
+      depends_on:
+        zuul-service:
+          condition: service_healthy
+      ports:
+        - "9005:9005"
+    
+        
+    
