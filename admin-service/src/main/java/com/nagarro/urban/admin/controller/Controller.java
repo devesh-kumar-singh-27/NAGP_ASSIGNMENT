@@ -3,10 +3,9 @@ package com.nagarro.urban.admin.controller;
 import java.util.Collections;
 import java.util.List;
 
-import javax.ws.rs.QueryParam;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,7 +23,7 @@ public class Controller {
 	}
 
 	@GetMapping("/clientDetails")
-	public ClientDetails getClientDetials(@QueryParam("clientId") String clientId) {
+	public ClientDetails getClientDetials(@RequestParam("clientId") String clientId) {
 		return new ClientDetails();
 	}
 
@@ -35,7 +34,7 @@ public class Controller {
 	}
 
 	@GetMapping("/serviceDetails")
-	public ServiceDetails serviceDetails(@QueryParam("serviceId") String serviceId) {
+	public ServiceDetails serviceDetails(@RequestParam("serviceId") String serviceId) {
 		return new ServiceDetails();
 	}
 
@@ -61,7 +60,7 @@ public class Controller {
 	}
 
 	@PutMapping("/assign")
-	public boolean assign(@QueryParam("serviceId") String serviceId, @QueryParam("providerId") String providerDetails) {
+	public boolean assign(@RequestParam("serviceId") String serviceId, @RequestParam("providerId") String providerDetails) {
 		return true;
 	}
 
